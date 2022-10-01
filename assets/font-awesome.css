@@ -1,0 +1,25 @@
+.fa-xs {
+    padding: 6px;
+    font-size: 1em !important;
+}
+.fa-plus {
+    background-color: #38b673;
+    color: #fff;
+}
+.fa-plus:hover {
+    background-color: #38aa6d;
+}
+.fa-pen {
+    background-color: #3FAEB4;
+    color: #fff;
+}
+.fa-pen:hover {
+    background-color: #3ba0a5;
+}
+.fa-trash {
+    background-color: #B4393C;
+    color: #fff;
+}
+.fa-trash:hover {
+    background-color: #9e3335;
+}
