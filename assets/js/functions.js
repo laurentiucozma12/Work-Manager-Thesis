@@ -1,17 +1,27 @@
 // Projects
+$(document).ready(function(){
+    displayData();
+});
+
 function saveProject() {
     let projectNameAdd = $('#projectName').val();
 
     $.ajax({
-        url: "insert.php",
+        url: "/services/insert.php",
         type: 'post',
         data: {
+            updateProject: true,
             projectNameSend: projectNameAdd
         },
         success: function(data, status) {
             $('#createProject').modal('hide');
 
             displayData();
+        }, 
+        error: function (jqXHR, textStatus, errorThrown) { 
+            var error = jqXHR.responseJSON;
+            $('.modal-body').prepend('<p>Title: '+ error.title +'</p>');
+            $('.modal-body').prepend('<p>msg: '+ error.message +'</p>');
         }
     })
 }
@@ -19,20 +29,84 @@ function saveProject() {
 function displayData() {
     let displayDataProjects = "true";
     $.ajax({
-        url: "display.php",
+        url: "/services/display.php",
         type: 'post',
         data: {
             displaySendProjects: displayDataProjects,
         },
         success: function(data, status) {
             $('#displayDataProjects').html(data);
+            addFunc();
         }
     });
 }
 
+function addFunc() {
+    $("input").keypress(function(event) {
+        if(event.keyCode == 13) {
+            var id = event.target.id;
+            id = parseInt( id.replace(/[^0-9.]/g, "") );
+            var projectName = $(event.target).val();
+            
+            var data = {
+                updateProject: true,
+                id: id, 
+                projectName: projectName
+            };
+    
+            $.ajax({
+                url: "/services/update.php",
+                dataType: "json",
+                type: "POST",
+                data: data
+            }).done(function(response) {
+    
+                if(response.success) {
+                Swal.fire({
+                    title: response.title,
+                    text: response.message,
+                    icon: 'info',
+                    confirmButtonText: 'OK'
+                  });
+                }
+
+    
+            }).fail(function(jqXHR, textStatus) {
+    
+                register_error(jqXHR, textStatus);
+    
+            });
+    
+
+        }
+    });
+}
+
+function register_error (xhr, exception) {
+    var msg = "";
+    if (xhr.status === 0) {
+        msg = "Not connect.\n Verify Network." + xhr.responseText;
+    } else if (xhr.status == 404) {
+        msg = "Requested page not found. [404]" + xhr.responseText;
+    } else if (xhr.status == 500) {
+        msg = "Internal Server Error [500]." +  xhr.responseText;
+    } else if (exception === "parsererror") {
+        msg = "Requested JSON parse failed.";
+    } else if (exception === "timeout") {
+        msg = "Time out error." + xhr.responseText;
+    } else if (exception === "abort") {
+        msg = "Ajax request aborted.";
+    } else {
+        msg = "Error:" + xhr.status + " " + xhr.responseText;
+    }
+
+    if(msg)
+        alert(msg);
+}
+
 function deleteProject(deleteProject) {
     $.ajax({
-        url: "delete.php",
+        url: "/services/delete.php",
         type: 'post',
         data: {
             deleteSend: deleteProject
@@ -45,7 +119,7 @@ function deleteProject(deleteProject) {
 
 function getData(updateId) {
     $.ajax({
-        url: "update.php",
+        url: "/services/update.php",
         type: 'post',
         data: {
             updateId: updateId
@@ -82,7 +156,7 @@ function updateProject() {
 function saveTask(id) {
     let taskNameAdd = $('#taskName' + id).val();
     $.ajax({
-        url: 'insert.php',
+        url: '/services/insert.php',
         type: 'POST',
         data: { 
 		taskNameSend: taskNameAdd,
@@ -96,7 +170,7 @@ function saveTask(id) {
 
 function deleteTask(deleteTask) {
     $.ajax({
-        url: "delete.php",
+        url: "/services/delete.php",
         type: 'post',
         data: {
             deleteSendTask: deleteTask
@@ -109,7 +183,7 @@ function deleteTask(deleteTask) {
 
 function getDataTask(updateIdTask) {
     $.ajax({
-        url: "update.php",
+        url: "/services/update.php",
         type: 'post',
         data: {
             updateIdTask: updateIdTask
@@ -138,7 +212,7 @@ function updateTask() {
     var task_is_checked = $("#task_is_checked").is(':checked') ? true : false;
 
     $.ajax({
-        url: "update.php",
+        url: "/services/update.php",
         type: 'post',
         dataType: "json",
         data: {

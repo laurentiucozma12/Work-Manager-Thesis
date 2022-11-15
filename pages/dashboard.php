@@ -1,26 +1,25 @@
 <?php
-include "connect.php";
-// Connect to MySQL database
+include "../services/config.php";
+include ROOT_PATH."/services/connect.php";
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Work Manager</title>
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/style.css" type="text/css">
-    <link rel="stylesheet" href="assets/font.css" type="text/css">
-    <link rel="stylesheet" href="assets/font-awesome.css" type="text/css">
+<meta charset="utf-8">
+<title>Work Manager</title>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-    <link rel="icon" href="assets/logo.svg" type="image/x-icon" />
+<!-- CSS -->
+<link rel="stylesheet" href="<?php echo WEB_PATH; ?>/assets/css/style.css" type="text/css">
+<link rel="stylesheet" href="<?php echo WEB_PATH; ?>/assets/css/font.css" type="text/css">
+<link rel="stylesheet" href="<?php echo WEB_PATH; ?>/assets/css/font-awesome.css" type="text/css">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/bootstrap-v5.1.3.css">
-    
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+<link rel="icon" href="<?php echo WEB_PATH; ?>/assets/img/logo.svg" type="image/x-icon" />
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="<?php echo WEB_PATH; ?>/assets/css/bootstrap-v5.1.3.css">   
+
 </head>
 <body>
 <header>
@@ -91,24 +90,16 @@ include "connect.php";
     <div class="rest"></div>
 </footer>
 
+<!-- Popper -->
+<script src="<?php echo WEB_PATH; ?>/assets/js/popper-v1.12-9.js"></script>
+
 <!-- Bootstrap JS -->
-<script src="assets/jquery-v3.2.1.slim.min.js"></script>
-<script src="assets/popper-v1.12-9.js"></script>
-<script src="assets/bootstrap-v5.1.3.js"></script>
+<script src="<?php echo WEB_PATH; ?>/assets/js/bootstrap-v5.1.3.js"></script>
 
 <!-- Ajax jQuery -->
-<script src="assets/ajax-jquery-v3.6.0.min.js"></script>
+<script src="<?php echo WEB_PATH; ?>/assets/js/ajax-jquery-v3.6.0.js"></script>
 
 <!-- functions -->
-<script src="assets/functions.js"></script>
-
-<script>
-$(document).ready(function() {
-    displayData();
-});
-
-let deleteId;
-deleteProject(deleteId);
-</script>
+<script src="<?php echo WEB_PATH; ?>/assets/js/functions.js"></script>
 </body>
 </html>
