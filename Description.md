@@ -3,8 +3,8 @@ Work Manager is my thesis. The user is able to add/edit/delete it's projects or 
 
 ## Preview
 Dashboard:   
-![Dashboard](/licenta/projectPreview/dashboard.png)    
+![Dashboard](https://github.com/laurentiucozma12/Work-Manager-Thesis/blob/master/projectPreview/dashboard.png)    
 Projects:    
-![Projects](/licenta/projectPreview/database_projects.png)     
+![Projects](https://github.com/laurentiucozma12/Work-Manager-Thesis/blob/master/projectPreview/database_projects.png)     
 Tasks:             
-![Tasks](/licenta/projectPreview/database_tasks.png)           
+![Tasks](https://github.com/laurentiucozma12/Work-Manager-Thesis/blob/master/projectPreview/database_tasks.png)           
