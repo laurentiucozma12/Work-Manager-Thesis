@@ -36,72 +36,8 @@ function displayData() {
         },
         success: function(data, status) {
             $('#displayDataProjects').html(data);
-            addFunc();
         }
     });
-}
-
-function addFunc() {
-    $("input").keypress(function(event) {
-        if(event.keyCode == 13) {
-            var id = event.target.id;
-            id = parseInt( id.replace(/[^0-9.]/g, "") );
-            var projectName = $(event.target).val();
-            
-            var data = {
-                updateProject: true,
-                id: id, 
-                projectName: projectName
-            };
-    
-            $.ajax({
-                url: "/services/update.php",
-                dataType: "json",
-                type: "POST",
-                data: data
-            }).done(function(response) {
-    
-                if(response.success) {
-                Swal.fire({
-                    title: response.title,
-                    text: response.message,
-                    icon: 'info',
-                    confirmButtonText: 'OK'
-                  });
-                }
-
-    
-            }).fail(function(jqXHR, textStatus) {
-    
-                register_error(jqXHR, textStatus);
-    
-            });
-    
-
-        }
-    });
-}
-
-function register_error (xhr, exception) {
-    var msg = "";
-    if (xhr.status === 0) {
-        msg = "Not connect.\n Verify Network." + xhr.responseText;
-    } else if (xhr.status == 404) {
-        msg = "Requested page not found. [404]" + xhr.responseText;
-    } else if (xhr.status == 500) {
-        msg = "Internal Server Error [500]." +  xhr.responseText;
-    } else if (exception === "parsererror") {
-        msg = "Requested JSON parse failed.";
-    } else if (exception === "timeout") {
-        msg = "Time out error." + xhr.responseText;
-    } else if (exception === "abort") {
-        msg = "Ajax request aborted.";
-    } else {
-        msg = "Error:" + xhr.status + " " + xhr.responseText;
-    }
-
-    if(msg)
-        alert(msg);
 }
 
 function deleteProject(deleteProject) {
@@ -141,11 +77,11 @@ function updateProject() {
     var project_name = $('#project_name').val();
     var project_id = $('#project_id').val();
 
-    $.post('update.php', { 
+    $.post('/services/update.php', { 
         project_name: project_name,
         project_id: project_id
     },
-    
+
     function(data, status) {
         $('#updateModal').modal('hide');
         displayData();
