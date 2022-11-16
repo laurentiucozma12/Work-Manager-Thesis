@@ -30,8 +30,10 @@ if (isset($_POST['displaySendProjects'])) {
                 $taskId = $result["id"];
                 $taskName = $result["taskName"];                
                 $isCheck = $result["is_checked"] ? "checked"  : "" ;
-                echo 
-                '<div id="taskName" class="taskName">
+                if ($isCheck == "checked") {
+                    '<div style="text-decoration: line-through;">'.$taskName.'</div>';
+                }
+                echo '<div id="taskName" class="taskName">
                     <div class="d-flex justify-content-between">                            
                         <input type="checkbox"  '. $isCheck . '/>
                         <div class="actions">
@@ -39,9 +41,13 @@ if (isset($_POST['displaySendProjects'])) {
                             <button type="button" href="#" class="trash" onclick="deleteTask('.$taskId.')"><i class="fas fa-trash fa-xs"></i></button>
                         </div>
                     </div>
-                    <div class="taskText">' . $taskName . '</div> 
-                </div>
                 ';
+                    if ($isCheck == "checked") {
+                    echo '<div class="taskText" style="text-decoration: line-through;">' . $taskName . '</div>';
+                    } else {
+                    echo '<div class="taskText" style="text-decoration: none;">' . $taskName . '</div>';
+                    }
+                echo '</div>';
             }
 
             echo '
