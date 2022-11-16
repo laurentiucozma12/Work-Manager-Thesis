@@ -12,7 +12,7 @@ if (isset($_POST['displaySendProjects'])) {
         echo
         '<div class="projectAndTaskContainer">
             <div class="projectContainer">   		
-                <div id="projectName" class="projectName" placeholder="enter project name">' . $projectName . '</div>
+                <div id="projectName" class="projectName" placeholder="enter project name">'.$projectName.'</div>
 
                 <div class="actions">
                     <button type="button" data-bs-toggle="modal" data-bs-target="#createTask'.$id.'" class="add"><i class="fas fa-plus fa-xs"></i></button>        
@@ -35,7 +35,7 @@ if (isset($_POST['displaySendProjects'])) {
                 }
                 echo '<div id="taskName" class="taskName">
                     <div class="d-flex justify-content-between">                            
-                        <input type="checkbox"  '. $isCheck . '/>
+                        <input style="pointer-events: none;" type="checkbox"  '.$isCheck.'/>
                         <div class="actions">
                             <button type="button" href="#" class="edit" onclick="getDataTask('.$taskId.')"><i class="fas fa-pen fa-xs"></i></button>
                             <button type="button" href="#" class="trash" onclick="deleteTask('.$taskId.')"><i class="fas fa-trash fa-xs"></i></button>
@@ -43,9 +43,9 @@ if (isset($_POST['displaySendProjects'])) {
                     </div>
                 ';
                     if ($isCheck == "checked") {
-                    echo '<div class="taskText" style="text-decoration: line-through;">' . $taskName . '</div>';
+                    echo '<div class="taskText" style="text-decoration: line-through;">'.$taskName.'</div>';
                     } else {
-                    echo '<div class="taskText" style="text-decoration: none;">' . $taskName . '</div>';
+                    echo '<div class="taskText" style="text-decoration: none;">'.$taskName.'</div>';
                     }
                 echo '</div>';
             }
