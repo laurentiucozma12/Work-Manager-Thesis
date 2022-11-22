@@ -8,7 +8,7 @@ Work Manager is my thesis.
 **Table of contents**
 - [Login and Register System](#login-and-register-system)
 - [Dashboard](#dashboard)
-- [Database](#dashboard)
+- [Database](#database)
     - [Users](#users)
     - [Projects](#projects)
     - [Tasks](#tasks)
