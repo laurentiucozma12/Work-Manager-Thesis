@@ -1,5 +1,5 @@
 # Work Manager
-Work Manager is my thesis. 
+Work Manager is my thesis.      
 **The user is able to:**
 - register and login into the site
 - add/edit/delete it's projects or tasks
