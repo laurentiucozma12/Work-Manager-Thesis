@@ -5,11 +5,26 @@ Work Manager is my thesis.
 - add/edit/delete it's projects or tasks
 - check every task after completion
 
-# Dashboard Preview  
+**Table of contents**
+- [Login and Register System](#login-and-register-system)
+- [Dashboard](#dashboard)
+- [Database](#dashboard)
+    - [Users](#users)
+    - [Projects](#projects)
+    - [Tasks](#tasks)
+- [Documentation](#documentation)
+
+# Login and Register System
 ![login](https://github.com/laurentiucozma12/Work-Manager-Thesis/blob/master/projectPreview/login.png)     
 ![register](https://github.com/laurentiucozma12/Work-Manager-Thesis/blob/master/projectPreview/register.png)     
-![dashboard](https://github.com/laurentiucozma12/Work-Manager-Thesis/blob/master/projectPreview/dashboard.png)     
-![database_projects](https://github.com/laurentiucozma12/Work-Manager-Thesis/blob/master/projectPreview/database_projects.png)     
+# Dashboard  
+![dashboard](https://github.com/laurentiucozma12/Work-Manager-Thesis/blob/master/projectPreview/dashboard.png)  
+# Database    
+## Users
+![database_users](https://github.com/laurentiucozma12/Work-Manager-Thesis/blob/master/projectPreview/database_users.png)  
+## Projects  
+![database_projects](https://github.com/laurentiucozma12/Work-Manager-Thesis/blob/master/projectPreview/database_projects.png)    
+# Tasks 
 ![database_tasks](https://github.com/laurentiucozma12/Work-Manager-Thesis/blob/master/projectPreview/database_tasks.png)    
     
 # Documentation
