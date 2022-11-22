@@ -1,7 +1,32 @@
+:root {
+    --white-gray: #b8b7b7;
+    --white-blue: #c5d2e5;
+    --white-blue-2: #ecf0f6;
+    --gray-1: #313131; 
+    --gray-2: #2d2d2d;  
+    --blue: #3f69a8;
+    --dark-blue: #1774ca;
+    --green-1: #38b673;
+    --green-2: #38aa6d;
+}
 * {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+/* Login and Register Pages */
+.loginRegisterContainer {
+    color: white;
+    background-color: var(--blue);
+    padding: 3rem 2rem;
+}
+.loginRegisterContainer .form-text {
+    color: var(--white-gray);
+    
+}
+.loginRegisterContainer a {
+    color: white;
+    
 }
 /* Bootstrap buttons */
 input:hover, input:focus, input:active {
@@ -30,7 +55,12 @@ input:hover, input:focus, input:active {
 .btn-secondary:hover {
     background-color: rgb(58, 58, 58) !important;
 }
-/* end of bootstrap button */
+/* Bootstrap inputs */
+input {
+    border-radius: 0 !important;
+}
+
+/* Body */
 body {
     background-color: #FFFFFF;
     margin: 0;
@@ -60,6 +90,13 @@ body {
 }
 .navtop div .container a .fa-cog {
     font-size: 35pt !important;
+    color: #c5d2e5;
+}
+.navtop div .container a .fa-cog:hover {
+    color: #c5d2e5 !important;
+}
+.navtop div .container .title {
+    cursor: pointer;
 }
 .navtop div div h1 {
     font-size: 2.5em;
@@ -70,8 +107,37 @@ body {
     min-width: 220px;
     padding: 0 0 0 20px;
 }
+.navtop div form .logoutBtn {
+    margin-left: 5rem;
+}
 .read {    
     overflow-x: scroll;
+}
+/* FontAwesome */
+.fa-xs {
+    padding: 9px;
+    font-size: 1em !important;
+}
+.fa-plus {
+    background-color: #38b673;
+    color: #fff;
+}
+.fa-plus:hover {
+    background-color: #38aa6d;
+}
+.fa-pen {
+    background-color: #3FAEB4;
+    color: #fff;
+}
+.fa-pen:hover {
+    background-color: #3ba0a5;
+}
+.fa-trash {
+    background-color: #B4393C;
+    color: #fff;
+}
+.fa-trash:hover {
+    background-color: #9e3335;
 }
 /* start of content projects */
 .content {
@@ -82,8 +148,8 @@ body {
 }
 .projectAndTaskContainer {
     margin: 0 1rem 0 0;
-    min-width: 270px;
-    max-width: 270px;
+    min-width: 310px;
+    max-width: 310px;
     height: fit-content;
     color: #313131;
     background-color: #e0e0e0;
@@ -99,7 +165,7 @@ body {
     background-color: #e0e0e0;
 }
 .projectContainer .projectName {
-    width: 160px;
+    width: 175px;
     min-height: fit-content;
     margin: 0 10px 0 0;
     display: flex;
@@ -107,6 +173,12 @@ body {
     justify-content: center;
     text-align: center;
     outline: 0;
+    border: 1px solid transparent;
+}
+.projectContainer .projectName:focus {
+    background-color: white;
+    border: 1px solid #3f69a8;
+    transition: .5s;
 }
 .projectContainer .actions button {
     padding: 0;
@@ -154,8 +226,31 @@ footer .rest {
     min-height: 10em;
     background-color: #3f69a8;
 }
-
+@media screen and (max-width: 650px) {
+    .navtop div .container a .fa-cog {
+        font-size: 25pt !important;
+    }
+    .navtop div .container .title h1 {
+        padding-left: 1rem !important;
+        font-size: 20pt !important;
+    }
+    .navBtn {
+        font-size: 9pt !important;
+        padding: .5rem !important;
+    }
+    .navtop div form .logoutBtn {
+        margin-left: 1rem !important;
+    }
+}
+@media screen and (max-height: 1050px) {
+    .container {
+        margin-top: 2rem ;
+    }
+}
 @media screen and (max-height: 700px) {
+    .container {
+        margin-top: 0 !important;
+    }
     .taskContainer {
         max-height: 68vh;
     }

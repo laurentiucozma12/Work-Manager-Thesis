@@ -1,12 +1,19 @@
 <?php 
-include 'connect.php';
-if (isset($_POST['displaySendProjects'])) {
-    echo '<div class="content">';
-    $projects = $pdo->prepare("SELECT * FROM projects");
-    $projects->execute();
-    $results = $projects->fetchAll(PDO::FETCH_ASSOC);
+include '../../app/config/config.php';
+include ROOT_PATH.'/app/config/connect.php';
+$conn = connection();
 
-    foreach ($results as $result) {
+if (isset($_POST['displaySendProjects'])) {
+
+    $id = $_SESSION["userId"];
+    $sql = $conn->prepare("SELECT * FROM projects WHERE userId = :userId");
+    $sql->bindParam(":userId", $id);
+    $sql->execute();
+    $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+      
+    echo '<div class="zone content">'; 
+
+    foreach ($results as $result) {        
         $id = $result["id"];
         $projectName = $result["projectName"];
         echo
@@ -15,14 +22,14 @@ if (isset($_POST['displaySendProjects'])) {
                 <div id="projectName" class="projectName" placeholder="enter project name">'.$projectName.'</div>
 
                 <div class="actions">
-                    <button type="button" data-bs-toggle="modal" data-bs-target="#createTask'.$id.'" class="add"><i class="fas fa-plus fa-xs"></i></button>        
-                    <button type="button" href="#" class="edit" onclick="getData('.$id.')"><i class="fas fa-pen fa-xs"></i></button>
-                    <button type="button" href="#" class="trash" onclick="deleteProject('.$id.')"><i class="fas fa-trash fa-xs"></i></button>
+                    <button class="add" type="button" data-bs-toggle="modal" data-bs-target="#createTask'.$id.'"><i class="fas fa-plus fa-xs"></i></button>        
+                    <button class="edit" type="button" href="#"onclick="getData('.$id.')"><i class="fas fa-pen fa-xs"></i></button>
+                    <button class="trash" type="button" href="#" onclick="deleteProject('.$id.')"><i class="fas fa-trash fa-xs"></i></button>
                 </div>
             </div>
             <div class="taskContainer">
             ';		
-            $tasks = $pdo->prepare("SELECT * FROM tasks WHERE projectId = :id");
+            $tasks = $conn->prepare("SELECT * FROM tasks WHERE projectId = :id");
             $tasks->bindParam(":id", $id);
             $tasks->execute();
             $results = $tasks->fetchAll(PDO::FETCH_ASSOC);
@@ -76,7 +83,7 @@ if (isset($_POST['displaySendProjects'])) {
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="task_name"><h4 class="m-0">Edit task name</h4></label>
-                                <div class="container p-0 d-flex justify-content-between">
+                                <div class="container p-0 m-0 d-flex justify-content-between">
                                     <input type="text" id="task_name" class="form-control mt-3 mb-3" placeholder="Enter task name">
                                     <div class="m-3 d-flex justify-content-center">
                                         <div>

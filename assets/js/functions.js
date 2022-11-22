@@ -1,13 +1,13 @@
 // Projects
 $(document).ready(function(){
-    displayData();
+    displayData();  
 });
 
 function saveProject() {
     let projectNameAdd = $('#projectName').val();
 
     $.ajax({
-        url: "/services/insert.php",
+        url: "/app/services/insert.php",
         type: 'post',
         data: {
             updateProject: true,
@@ -29,7 +29,7 @@ function saveProject() {
 function displayData() {
     let displayDataProjects = "true";
     $.ajax({
-        url: "/services/display.php",
+        url: "/app/services/display.php",
         type: 'post',
         data: {
             displaySendProjects: displayDataProjects,
@@ -42,7 +42,7 @@ function displayData() {
 
 function deleteProject(deleteProject) {
     $.ajax({
-        url: "/services/delete.php",
+        url: "/app/services/delete.php",
         type: 'post',
         data: {
             deleteSend: deleteProject
@@ -55,7 +55,7 @@ function deleteProject(deleteProject) {
 
 function getData(updateId) {
     $.ajax({
-        url: "/services/update.php",
+        url: "/app/services/update.php",
         type: 'post',
         data: {
             updateId: updateId
@@ -77,7 +77,7 @@ function updateProject() {
     var project_name = $('#project_name').val();
     var project_id = $('#project_id').val();
 
-    $.post('/services/update.php', { 
+    $.post('/app/services/update.php', { 
         project_name: project_name,
         project_id: project_id
     },
@@ -92,21 +92,26 @@ function updateProject() {
 function saveTask(id) {
     let taskNameAdd = $('#taskName' + id).val();
     $.ajax({
-        url: '/services/insert.php',
+        url: '/app/services/insert.php',
         type: 'POST',
         data: { 
 		taskNameSend: taskNameAdd,
 		taskProjectId: id
 		},
-        success: function (data) { console.log("success"); displayData();},
-        error: function (jqXHR, textStatus, errorThrown) { console.log("error"); }
+        success: function (data) { 
+            console.log("success"); 
+            displayData();
+        },
+        error: function (jqXHR, textStatus, errorThrown) { 
+            console.log("error"); 
+        }
     });
     $('#createTask' + id).modal('hide');
 }
 
 function deleteTask(deleteTask) {
     $.ajax({
-        url: "/services/delete.php",
+        url: "/app/services/delete.php",
         type: 'post',
         data: {
             deleteSendTask: deleteTask
@@ -119,7 +124,7 @@ function deleteTask(deleteTask) {
 
 function getDataTask(updateIdTask) {
     $.ajax({
-        url: "/services/update.php",
+        url: "/app/services/update.php",
         type: 'post',
         data: {
             updateIdTask: updateIdTask
@@ -148,7 +153,7 @@ function updateTask() {
     var task_is_checked = $("#task_is_checked").is(':checked') ? true : false;
 
     $.ajax({
-        url: "/services/update.php",
+        url: "/app/services/update.php",
         type: 'post',
         dataType: "json",
         data: {

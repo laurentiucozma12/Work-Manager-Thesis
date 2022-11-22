@@ -1,5 +1,5 @@
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;  
+    font-family: 'Lato', 'segoe ui', 'fira sans', 'droid sans', 'helvetica neue', Arial, sans-serif;  
 }
 h1 {
     font-size: 23pt !important;
@@ -27,7 +27,7 @@ h6 {
 }
 p, input, textarea {
     font-size: 11pt !important;
-    font-weight: 200 !important;
+    font-weight: 400 !important;
 }
 small, span {
     font-size: 8pt !important;

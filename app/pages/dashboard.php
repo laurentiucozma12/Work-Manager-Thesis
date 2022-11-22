@@ -1,49 +1,40 @@
-<?php
-include "../services/config.php";
-include ROOT_PATH."/services/connect.php";
+<?php 
+include "../../app/config/config.php";
+include ROOT_PATH."/app/config/connect.php";
+include ROOT_PATH."/assets/html/head.php";
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Work Manager</title>
-
-<!-- CSS -->
-<link rel="stylesheet" href="<?php echo WEB_PATH; ?>/assets/css/style.css" type="text/css">
-<link rel="stylesheet" href="<?php echo WEB_PATH; ?>/assets/css/font.css" type="text/css">
-<link rel="stylesheet" href="<?php echo WEB_PATH; ?>/assets/css/font-awesome.css" type="text/css">
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-<link rel="icon" href="<?php echo WEB_PATH; ?>/assets/img/logo.svg" type="image/x-icon" />
-
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="<?php echo WEB_PATH; ?>/assets/css/bootstrap-v5.1.3.css">   
-
-</head>
-<body>
 <header>
-<nav class="navtop d-flex justify-content-between">
+    <nav class="navtop d-flex justify-content-between">
     <div>
-        <div class="container">
-            <a href=".">
+        <div class="container m-0 p-0">
+            <a>
                 <i class="fas fa-cog"></i>
             </a>
-            <a href="." class="title">
+            <a class="title">
                 <h1>Work Manager</h1>
             </a>
         </div>
     </div>
     <div>
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createProject">
+        <button type="button" class="btn btn-primary navBtn" data-bs-toggle="modal" data-bs-target="#createProject">
         Create Project
         </button>
+        <form method="post">
+            <button class="btn btn-primary logoutBtn navBtn" type="submit" name="logout">Logout</button>
+        </form>
     </div>  
 </nav>
-</header>    
-<main>    
-    <div class="content read">	
+
+<?php 
+if (isset($_POST["logout"])) {
+    session_destroy();
+    header('Location: ./login.php');
+}
+?>
+</header>
+<main>
+<div class="content read">	
         <!-- Modal Project -->
         <div class="modal" id="createProject" tabindex="-1">
             <div class="modal-dialog">
@@ -80,26 +71,7 @@ include ROOT_PATH."/services/connect.php";
         </div>
 
         <!-- Here will be displayed the projects -->
-        <div id="displayDataProjects" class="displayDataProjects">
-            <div id="displayDataTasks" class="displayDataTasks"></div> 
-        </div>       
+        <div id="displayDataProjects" class="displayDataProjects"></div>       
     </div>  
 </main>
-<footer>
-    <div class="copyright">© 2022 Copyright of Laurentiu Ioan Cozma</div>
-    <div class="rest"></div>
-</footer>
-
-<!-- Popper -->
-<script src="<?php echo WEB_PATH; ?>/assets/js/popper-v1.12-9.js"></script>
-
-<!-- Bootstrap JS -->
-<script src="<?php echo WEB_PATH; ?>/assets/js/bootstrap-v5.1.3.js"></script>
-
-<!-- Ajax jQuery -->
-<script src="<?php echo WEB_PATH; ?>/assets/js/ajax-jquery-v3.6.0.js"></script>
-
-<!-- functions -->
-<script src="<?php echo WEB_PATH; ?>/assets/js/functions.js"></script>
-</body>
-</html>
+<?php include ROOT_PATH."/assets/html/footer.php" ?>

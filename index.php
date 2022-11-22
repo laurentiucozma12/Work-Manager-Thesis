@@ -1,1 +1,3 @@
-<?php include 'dashboard.php';?>
+<?php 
+include 'app/pages/dashboard.php';
+?>
