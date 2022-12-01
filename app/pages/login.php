@@ -19,9 +19,11 @@ include ROOT_PATH.'/assets/html/head.php';
                     Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
                 </div>
             </div>
-            <button type='submit' name='login' class='btn btn-primary'>Login</button>
+            <div class="d-flex justify-content-center">
+                <button type='submit' name='login' class='btn btn-primary'>Login</button>
+            </div>
         </form>
-        <div class='otherPage'>
+        <div class='otherPage d-flex justify-content-center'>
             <a href='<?php echo WEB_PATH; ?>/app/pages/register.php'>Dont have an account? Go to register.</a>
         </div>
     </div>

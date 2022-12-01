@@ -18,7 +18,7 @@
 .loginRegisterContainer {
     color: white;
     background-color: var(--blue);
-    padding: 3rem 2rem;
+    padding: 1rem 2rem;
 }
 .loginRegisterContainer .form-text {
     color: var(--white-gray);
@@ -240,11 +240,6 @@ footer .rest {
     }
     .navtop div form .logoutBtn {
         margin-left: 1rem !important;
-    }
-}
-@media screen and (max-height: 1050px) {
-    .container {
-        margin-top: 2rem ;
     }
 }
 @media screen and (max-height: 700px) {

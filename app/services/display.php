@@ -83,7 +83,7 @@ if (isset($_POST['displaySendProjects'])) {
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="task_name"><h4 class="m-0">Edit task name</h4></label>
-                                <div class="container p-0 m-0 d-flex justify-content-between">
+                                <div class="container p-0 d-flex justify-content-between">
                                     <input type="text" id="task_name" class="form-control mt-3 mb-3" placeholder="Enter task name">
                                     <div class="m-3 d-flex justify-content-center">
                                         <div>
