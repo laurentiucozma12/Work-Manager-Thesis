@@ -13,7 +13,7 @@ Work Manager is my thesis.
     - [Projects](#projects)
     - [Tasks](#tasks)
 - [Documentation](#documentation)
-
+ 
 # Login and Register System
 ![login](https://github.com/laurentiucozma12/Work-Manager-Thesis/blob/master/projectPreview/login.png)     
 ![register](https://github.com/laurentiucozma12/Work-Manager-Thesis/blob/master/projectPreview/register.png)     
