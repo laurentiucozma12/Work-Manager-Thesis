@@ -37,12 +37,12 @@ if (isset($_POST["logout"])) {
 <div class="content read">	
         <!-- Modal Project -->
         <div class="modal" id="createProject" tabindex="-1">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="projectName"><h4 class="m-0">Project name</h4></label>
-                            <input type="text" class="form-control mt-3 mb-3" id="projectName" placeholder="Enter project name">
+                            <input name="projectName" class="form-control mt-3 mb-3" id="projectName" placeholder="Enter project name" />
                         </div>
                         
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -54,13 +54,13 @@ if (isset($_POST["logout"])) {
 
         <!-- Update Modal Project -->
         <div class="modal" id="updateModal" tabindex="-1">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="project_name"><h4 class="m-0">Edit project name</h4></label>
-                            <input type="text" id="project_name" class="form-control mt-3 mb-3" placeholder="Enter project name">
-                            <input type="hidden" id="project_id">
+                            <input name="project_name" id="project_name" class="form-control mt-3 mb-3" placeholder="Enter project name"/>
+                            <input type="hidden" id="project_id" />
                         </div>
                     
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

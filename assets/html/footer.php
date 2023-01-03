@@ -7,7 +7,11 @@
 <script src="<?php echo WEB_PATH; ?>/assets/js/bootstrap-v5.1.3.js"></script>
 
 <!-- jQuery -->
-<script src="<?php echo WEB_PATH; ?>/assets/js/jQuery-3.6.1.js"></script>
+<script type="text/javascript" src="<?php echo WEB_PATH; ?>/assets/js/jQuery-v3.6.1.js"></script>
+<script type="text/javascript" src="<?php echo WEB_PATH; ?>/assets/js/jQuery-UI-v1.13.2.js"></script>
+
+<!-- Flatpickr -->
+<script type="text/javascript" src="<?php echo WEB_PATH; ?>/assets/js/flatpickr-v4.6.13.js"></script>
 
 <!-- functions -->
 <script src="<?php echo WEB_PATH; ?>/assets/js/functions.js"></script>

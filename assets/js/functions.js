@@ -1,3 +1,50 @@
+class Picker {
+
+    constructor ()
+    {
+        this.propSelector = "prop-selector";
+        this.pickerName = "flatpickr";
+        this.selector = null;
+        this.pickerConfig = {
+            enableTime: true,
+            time_24hr: true,
+            altInput: false,
+            altFormat: 'd M Y H:i',
+            dateFormat: "Y-m-d H:i",
+            onReady: function(dateObj, dateStr, instance) {
+                var $cal = $(instance.calendarContainer);
+                if ($cal.find('.flatpickr-clear').length < 1) {
+                    $cal.append('<div class="flatpickr-clear">Clear</div>');
+                    $cal.find('.flatpickr-clear').on('click', function() {
+                        instance.clear();
+                        instance.close();
+                    });
+                }
+            }
+        };
+
+        this.initPicker();
+    }
+
+    makeSelector (name)
+    {
+        if(name)
+            return '[prop-selector="'+ name +'"]';
+        else
+            return false;
+    }
+
+    initPicker()
+    {
+        $(this.makeSelector(this.pickerName)).flatpickr(this.pickerConfig);
+    }
+
+    getSelector()
+    {
+        return this.makeSelector(this.pickerName);
+    }
+}
+
 // Projects
 $(document).ready(function(){
     displayData();  
@@ -76,7 +123,7 @@ function getData(updateId) {
 function updateProject() {
     var project_name = $('#project_name').val();
     var project_id = $('#project_id').val();
-
+    
     $.post('/app/services/update.php', { 
         project_name: project_name,
         project_id: project_id
@@ -91,11 +138,14 @@ function updateProject() {
 // Tasks
 function saveTask(id) {
     let taskNameAdd = $('#taskName' + id).val();
+    let taskDescriptionAdd = $('#taskDescription' + id).val();
+
     $.ajax({
         url: '/app/services/insert.php',
         type: 'POST',
         data: { 
 		taskNameSend: taskNameAdd,
+		taskDescriptionSend: taskDescriptionAdd,
 		taskProjectId: id
 		},
         success: function (data) { 
@@ -106,6 +156,7 @@ function saveTask(id) {
             console.log("error"); 
         }
     });
+    
     $('#createTask' + id).modal('hide');
 }
 
@@ -130,9 +181,13 @@ function getDataTask(updateIdTask) {
             updateIdTask: updateIdTask
         },
         success: function (data, status) {
+
             var task = JSON.parse(data);
+
             $("#task_name").val(task.taskName);
+            $("#task_description").val(task.taskDescription);
             $("#task_id").val(task.id);  
+            $((new Picker()).getSelector()).val(task.date_time); 
             if (task.is_checked == 1) {
                 $("#task_is_checked").attr('checked', 'checked');
             } else {
@@ -148,9 +203,11 @@ function getDataTask(updateIdTask) {
 }
 
 function updateTask() {
-    var task_name = $('#task_name').val();
     var task_id = $('#task_id').val();    
-    var task_is_checked = $("#task_is_checked").is(':checked') ? true : false;
+    var task_name = $('#task_name').val();
+    var task_description = $('#task_description').val();
+    var task_date = $('#task_date').val();
+    var task_is_checked = $('#task_is_checked').is(':checked') ? true : false;
 
     $.ajax({
         url: "/app/services/update.php",
@@ -158,8 +215,10 @@ function updateTask() {
         dataType: "json",
         data: {
             task_name: task_name,
+            task_description: task_description,
             task_id: task_id,
-            task_is_checked: task_is_checked
+            task_is_checked: task_is_checked,
+            task_date: task_date
         },
         success: function (data, status) {
             console.log("success");

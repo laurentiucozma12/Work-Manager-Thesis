@@ -1,19 +1,65 @@
 :root {
-    --white-gray: #b8b7b7;
     --white-blue: #c5d2e5;
     --white-blue-2: #ecf0f6;
-    --gray-1: #313131; 
-    --gray-2: #2d2d2d;  
+    --light-gray-1: #cccccc;
+    --light-gray-2: #e0e0e0;
+    --gray-1: #2d2d2d; 
+    --gray-2: #424242;  
     --blue: #3f69a8;
+    --light-blue-1: #c5d2e5;
+    --light-blue-2: #d0dff6;
     --dark-blue: #1774ca;
     --green-1: #38b673;
-    --green-2: #38aa6d;
+    --green-2: #46d68a;
+    --red-1: #B4393C;
+    --red-2: #d64446;
+    --yellow-1: rgb(227, 220, 25);
 }
 * {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+/* Textarea */
+textarea {
+    width: 100%; 
+    min-height: 400px !important;
+    height: 100%;
+    resize: none;
+}
+
+/* Checkbox */
+input[type=checkbox]
+{
+    height:fit-content !important;
+    transform: scale(1.35);
+}
+
+/* Modal */
+.modal-body .container label {
+    margin: 0;
+}
+.container .check-span {
+    font-size: 12pt !important;
+    font-weight: 500 !important;
+}
+.container .flatpickr-container {
+    color: white;
+    padding: 0 .5em;
+    border-radius: 5px;
+    width: fit-content;
+}
+.red-bg {
+    background-color:  var(--red-2);
+}
+.yellow-bg {
+    background-color: var(--yellow-1);
+}
+.green-bg {
+    background-color: var(--green-1);
+}
+
 /* Login and Register Pages */
 .loginRegisterContainer {
     color: white;
@@ -22,18 +68,18 @@
     margin-top: 2rem;
 }
 .loginRegisterContainer .form-text {
-    color: var(--white-gray);
+    color: var(--light-gray-1);
     
 }
 .loginRegisterContainer a {
     color: white;
-    
 }
+
 /* Bootstrap buttons */
-input:hover, input:focus, input:active {
+/* input:hover, input:focus, input:active {
     border: 1px solid #CED4DA !important;
     box-shadow: none !important;
-}
+} */
 .btn-primary, .btn-secondary {
     font-weight: bold !important;
     font-size: 14px !important;
@@ -43,27 +89,61 @@ input:hover, input:focus, input:active {
     border: 0 !important;
 }
 .btn-primary, .btn-primary:focus {
-    background-color: #38b673 !important;
+    background-color: var(--green-1) !important;
     box-shadow: none !important;
 }
 .btn-primary:hover {
-    background-color: #38aa6d !important;
+    background-color: var(--green-2) !important;
+    transition: .5s;
 }
 .btn-secondary, .btn-secondary:focus {
-    background-color: #313131 !important;
+    background-color: var(--gray-1) !important;
     box-shadow: none !important;
 }
 .btn-secondary:hover {
-    background-color: rgb(58, 58, 58) !important;
+    background-color: var(--gray-2) !important;
+    transition: .5s;
 }
-/* Bootstrap inputs */
-input {
-    border-radius: 0 !important;
+
+/* FontAwesome */
+.fa-cog {
+    font-size: 30pt !important;
+    color: var(--light-blue-1);
+}
+.fa-cog:hover {
+    color: var(--light-blue-2);
+    transition: 2s;
+}
+.add {
+    font-size: .8em;
+    background-color: var(--green-1);
+    color: white;
+}
+.add:hover {
+    background-color: var(--green-2);
+    cursor: pointer;
+    transition: .5s;
+}
+.add i {
+    padding: .25em;
+}
+.trash {
+    font-size: .8em;
+    background-color: var(--red-1);
+    color: white;
+}
+.trash:hover {
+    background-color: var(--red-2);
+    cursor: pointer;
+    transition: .5s;
+}
+.trash i {
+    padding: .25em;
 }
 
 /* Body */
 body {
-    background-color: #FFFFFF;
+    background-color: white;
     margin: 0;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -89,13 +169,6 @@ body {
     color: #c5d2e5;
     font-weight: bold;
 }
-.navtop div .container a .fa-cog {
-    font-size: 35pt !important;
-    color: #c5d2e5;
-}
-.navtop div .container a .fa-cog:hover {
-    color: #c5d2e5 !important;
-}
 .navtop div .container .title {
     cursor: pointer;
 }
@@ -114,32 +187,6 @@ body {
 .read {    
     overflow-x: scroll;
 }
-/* FontAwesome */
-.fa-xs {
-    padding: 9px;
-    font-size: 1em !important;
-}
-.fa-plus {
-    background-color: #38b673;
-    color: #fff;
-}
-.fa-plus:hover {
-    background-color: #38aa6d;
-}
-.fa-pen {
-    background-color: #3FAEB4;
-    color: #fff;
-}
-.fa-pen:hover {
-    background-color: #3ba0a5;
-}
-.fa-trash {
-    background-color: #B4393C;
-    color: #fff;
-}
-.fa-trash:hover {
-    background-color: #9e3335;
-}
 /* start of content projects */
 .content {
     display: flex;
@@ -149,21 +196,25 @@ body {
 }
 .projectAndTaskContainer {
     margin: 0 1rem 0 0;
+    padding: 0.5em 0.5em 0 0.5em;
     min-width: 310px;
     max-width: 310px;
     height: fit-content;
     color: #313131;
-    background-color: #e0e0e0;
+    background-color: var(--light-gray-2);
     font-size: 14px;
     font-weight: bold;
-    padding: 0.5em 0.5em 0 0.5em;
     border: 1px solid #313131;
     border-radius: 5px;
 }
+.projectAndTaskContainer .container {
+    max-height: 76vh;
+    overflow-y: scroll;
+    padding-left: 0;
+    padding-right: .5em;
+}
 .projectContainer {
-    display: flex;
-    justify-content: center;
-    background-color: #e0e0e0;
+    background-color: var(--light-gray-2);
 }
 .projectContainer .projectName {
     width: 175px;
@@ -175,6 +226,9 @@ body {
     text-align: center;
     outline: 0;
     border: 1px solid transparent;
+    font-size: 12pt !important;
+    font-weight: 900 !important;
+    cursor: pointer;
 }
 .projectContainer .projectName:focus {
     background-color: white;
@@ -185,26 +239,50 @@ body {
     padding: 0;
     border: 0;
     outline: 0;
+    margin-left: 0.5em;
 }
 .taskContainer {    
-    overflow-y: scroll;
     max-height: 70vh;
     margin: 0.5rem 0;
+    width: 100%;
 }
-.taskContainer .taskName {    
+.taskContainer .open-modal {
+    cursor: pointer;
+}
+.taskContainer .open-modal label {
+    cursor: pointer;
+}
+.taskContainer tbody .taskName td .taskContainer {    
     background-color: #fff;
+    margin-bottom: .25em;
     padding: 0.5rem;
-    margin:0 0.5rem 0.5rem 0;
-    border-radius: 5px;
+    border-radius: 5px; 
+}
+.taskContainer .taskName .status {
+    margin-right: .5em;
+    font-size: 11pt;
 }
 .taskContainer .taskName .taskText {
     display: flex;
     justify-content: center;
 }
+.taskContainer .taskName .taskTextContainer {
+    cursor: pointer;   
+}
+.taskContainer .taskName .taskTitle {
+    font-size: 11pt !important;
+    font-weight: 900 !important;
+}
+.taskContainer .taskName .taskDescription {
+    font-size: 10pt !important;
+    font-weight: 700 !important;
+    background-color: var(--light-gray-1);
+    border-radius: 5px;
+    padding: 0 .4em;
+}
 .taskContainer .taskName .actions {
     display: flex;
     justify-content: center;
-    margin-bottom: 0.25rem;
 }
 .taskContainer .taskName .actions button {
     margin: 0 0.25rem;
@@ -212,6 +290,7 @@ body {
     border: 0;
     outline: 0;
 }
+
 /* End of Projects content */
 footer .copyright {
     display: flex;

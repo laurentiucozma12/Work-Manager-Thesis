@@ -2,7 +2,7 @@
 <html lang="en">
 <head>	
 <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
-<title>PHP Project</title>
+<title>Work Manager</title>
 <!-- Icon -->
 <link rel="icon" href="<?php echo WEB_PATH; ?>/assets/img/logo.svg" type="image/x-icon" />
 
@@ -19,7 +19,10 @@
 <link rel="stylesheet" href="<?php echo WEB_PATH; ?>/assets/css/font.css">
 
 <!-- Font Awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+<link rel="stylesheet" href="<?php echo WEB_PATH; ?>/assets/css/fontawesome-free-6.1.2-web/css/all.css">
+
+<!-- Flatpickr -->
+<link rel="stylesheet" href="<?php echo WEB_PATH; ?>/assets/css/flatpickr-v4.6.13.css">
 </head>
 <body>
     
