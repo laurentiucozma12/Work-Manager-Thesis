@@ -8,8 +8,8 @@ class DateHelper {
 	const COMPARE_TYPE_EQUAL = 3;
 	const COMPARE_TYPE_DIFF = 4;
 	
-	const DEFAULT_LOCALE = "ro_RO";
-	const DEFAULT_TIMEZONE = "Europe/Bucharest";
+	const DEFAULT_LOCALE = "london_LONDON";
+	const DEFAULT_TIMEZONE = "Europe/London";
 	const DEFAULT_FORMAT = "YYYY-MM-dd hh:mm:ss";
 	
 	public static string $LOCALE = self::DEFAULT_LOCALE;
@@ -22,10 +22,10 @@ class DateHelper {
 	******
 	** @param $format
 	* all accepted from intlDateFormatter *
-	* dd MMMM -> 01 Ianuarie
-	* dd MMMM YYYY -> 01 Ianuarie 2022
-	* YYYY-MM-dd -> 2022-01-01 ( mysql format - baza de date)
-	* YYYY-MM-dd hh:mm:ss -> 2022-01-01 02:00:00 ( mysql format - baza de date)
+	* dd MMMM -> 01 January
+	* dd MMMM YYYY -> 01 January 2022
+	* YYYY-MM-dd -> 2022-01-01 ( mysql format - database)
+	* YYYY-MM-dd hh:mm:ss -> 2022-01-01 02:00:00 ( mysql format - database)
 	******
 	** @param $modify
 	* Examples: (+/-) 1 minute / 1 hour / 1 day / 1 month / 1 year
