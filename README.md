@@ -15,10 +15,10 @@ Work Manager is my thesis.
 - [Documentation](#documentation)
  
 # Login and Register System
-![login](https://github.com/laurentiucozma12/Work-Manager-Thesis/blob/master/projectPreview/login.png)      
-![register](https://github.com/laurentiucozma12/Work-Manager-Thesis/blob/master/projectPreview/register.png)        
+![login](https://github.com/laurentiucozma12/Work-Manager-Thesis/blob/master/projectPreview/loginn.png)      
+![register](https://github.com/laurentiucozma12/Work-Manager-Thesis/blob/master/projectPreview/registerr.png)        
 # Dashboard  
-![dashboard](https://github.com/laurentiucozma12/Work-Manager-Thesis/blob/master/projectPreview/dashboard.png)   
+![dashboard](https://github.com/laurentiucozma12/Work-Manager-Thesis/blob/master/projectPreview/dashboardd.png)   
 # Database    
 ## Users
 ![database_users](https://github.com/laurentiucozma12/Work-Manager-Thesis/blob/master/projectPreview/database_users.png)   
