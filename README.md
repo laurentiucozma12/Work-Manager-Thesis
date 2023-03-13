@@ -37,4 +37,6 @@ Work Manager is my thesis.
 - [MySQL](https://dev.mysql.com/doc/)
 - [XAMPP](https://www.apachefriends.org/docs/)
 - [jQuery](https://api.jquery.com/)
+- [jQuery UI](https://api.jqueryui.com/)
 - [Ajax](https://api.jquery.com/jquery.ajax/)
+- [Flatpickr](https://flatpickr.js.org/)
