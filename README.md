@@ -1,4 +1,4 @@
-<!-- # Work Manager
+# Work Manager
 Work Manager is my thesis.      
 **The user is able to:**
 - register and login into the site
@@ -37,4 +37,4 @@ Work Manager is my thesis.
 - [MySQL](https://dev.mysql.com/doc/)
 - [XAMPP](https://www.apachefriends.org/docs/)
 - [jQuery](https://api.jquery.com/)
-- [Ajax](https://api.jquery.com/jquery.ajax/) -->
+- [Ajax](https://api.jquery.com/jquery.ajax/)
