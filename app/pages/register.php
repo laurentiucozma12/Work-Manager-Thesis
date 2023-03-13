@@ -3,7 +3,7 @@ include '../../app/config/config.php';
 include ROOT_PATH.'/app/services/registerService.php';
 include ROOT_PATH.'/assets/html/head.php';
 ?>
-<div class='wrap d-flex justify-content-center'>
+<div class='loginRegisterPage wrap d-flex justify-content-center'>
     <div class='loginRegisterContainer container wrap col-12 '>
         <h1 class='mb-4 text-center'>Register</h1>
         <form class='mb-4'  method='POST'>

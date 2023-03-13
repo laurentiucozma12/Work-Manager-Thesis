@@ -1,19 +1,15 @@
 :root {
-    --white-blue: #c5d2e5;
-    --white-blue-2: #ecf0f6;
     --light-gray-1: #cccccc;
     --light-gray-2: #e0e0e0;
     --gray-1: #2d2d2d; 
     --gray-2: #424242;  
-    --blue: #3f69a8;
-    --light-blue-1: #c5d2e5;
-    --light-blue-2: #d0dff6;
-    --dark-blue: #1774ca;
-    --green-1: #38b673;
-    --green-2: #46d68a;
-    --red-1: #B4393C;
-    --red-2: #d64446;
-    --yellow-1: rgb(227, 220, 25);
+    --green-1: #021C1E;
+    --green-2: #004445;
+    --green-3: #2C7873;
+    --green-4: #6FB98F;
+    --red-1: #b23f41;
+    --red-2: #da696b;
+    --yellow-1: #e2ca33;
 }
 * {
     box-sizing: border-box;
@@ -51,25 +47,31 @@ input[type=checkbox]
     width: fit-content;
 }
 .red-bg {
-    background-color:  var(--red-2);
+    background-color:  var(--red-1);
 }
 .yellow-bg {
     background-color: var(--yellow-1);
 }
 .green-bg {
-    background-color: var(--green-1);
+    background-color: var(--green-3);
 }
 
 /* Login and Register Pages */
+.loginRegisterPage {
+    background-image: url("../img/mainBackground.png");
+    min-height: 100vh;
+    background-size: cover;
+    position: relative;
+}
 .loginRegisterContainer {
+    height: fit-content;
     color: white;
-    background-color: var(--blue);
+    background-color: var(--green-2);
     padding: 1rem 2rem;
     margin-top: 2rem;
 }
 .loginRegisterContainer .form-text {
-    color: var(--light-gray-1);
-    
+    color: var(--green-4);   
 }
 .loginRegisterContainer a {
     color: white;
@@ -88,12 +90,12 @@ input[type=checkbox]
     border-radius: 0 !important;
     border: 0 !important;
 }
-.btn-primary, .btn-primary:focus {
-    background-color: var(--green-1) !important;
+.btn-primary {
+    background-color: var(--green-2);
     box-shadow: none !important;
 }
 .btn-primary:hover {
-    background-color: var(--green-2) !important;
+    background-color: var(--green-3) !important;
     transition: .5s;
 }
 .btn-secondary, .btn-secondary:focus {
@@ -108,19 +110,15 @@ input[type=checkbox]
 /* FontAwesome */
 .fa-cog {
     font-size: 30pt !important;
-    color: var(--light-blue-1);
-}
-.fa-cog:hover {
-    color: var(--light-blue-2);
-    transition: 2s;
+    color: white;
 }
 .add {
     font-size: .8em;
-    background-color: var(--green-1);
+    background-color: var(--green-3);
     color: white;
 }
 .add:hover {
-    background-color: var(--green-2);
+    background-color: var(--green-4);
     cursor: pointer;
     transition: .5s;
 }
@@ -148,12 +146,17 @@ body {
     overflow-x: hidden;
     overflow-y: hidden;
 }
+main {
+    background-image: url("../img/plants.png");
+    background-size: cover;
+    position: relative;
+}
 .navtop {
     margin: 0 auto;
-    background-color: #3f69a8;
+    background-color: var(--green-2);
     height: fit-content;
     width: 100%;
-    border: 0;
+    border-bottom: 5px solid var(--green-1);
     padding: 1rem;
 }
 .navtop div {
@@ -166,7 +169,7 @@ body {
 }
 .navtop div .container a {
     text-decoration: none;
-    color: #c5d2e5;
+    color: white;
     font-weight: bold;
 }
 .navtop div .container .title {
@@ -176,7 +179,7 @@ body {
     font-size: 2.5em;
     margin: 0;
     padding: 0;
-    color: #ecf0f6;
+    color: white;
     font-weight: normal;
     min-width: 220px;
     padding: 0 0 0 20px;
@@ -190,22 +193,39 @@ body {
 /* start of content projects */
 .content {
     display: flex;
+    min-width: 100% !important;
     min-height: 80vh !important;
-    min-width: 100%;
     padding: 0.5rem;
+    flex-shrink: 0 !important;
+}
+.displayDataProjects {
+    flex-shrink: 0 !important;
 }
 .projectAndTaskContainer {
-    margin: 0 1rem 0 0;
-    padding: 0.5em 0.5em 0 0.5em;
+    padding: .5em;
+    margin: .5em;
     min-width: 310px;
     max-width: 310px;
     height: fit-content;
-    color: #313131;
+    color: var(--gray-1);
     background-color: var(--light-gray-2);
     font-size: 14px;
     font-weight: bold;
-    border: 1px solid #313131;
+    border: 2px solid var(--green-3);
     border-radius: 5px;
+}
+.grabbable {
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+ /* (Optional) Apply a "closed-hand" cursor during drag operation. */
+.grabbable:active, .projectContainer .projectName:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
 }
 .projectAndTaskContainer .container {
     max-height: 76vh;
@@ -217,7 +237,7 @@ body {
     background-color: var(--light-gray-2);
 }
 .projectContainer .projectName {
-    width: 175px;
+    width: 100%;
     min-height: fit-content;
     margin: 0 10px 0 0;
     display: flex;
@@ -226,14 +246,14 @@ body {
     text-align: center;
     outline: 0;
     border: 1px solid transparent;
+    border-radius: 5px;
     font-size: 12pt !important;
     font-weight: 900 !important;
     cursor: pointer;
 }
-.projectContainer .projectName:focus {
+.projectContainer .projectName:hover {
     background-color: white;
-    border: 1px solid #3f69a8;
-    transition: .5s;
+    transition: 2s;
 }
 .projectContainer .actions button {
     padding: 0;
@@ -298,13 +318,13 @@ footer .copyright {
     justify-content: center;
     font-size: 20px;
     font-weight: 700;
-    color: fff;
-    background-color: #3f69a8;
+    color: var(--green-4);
+    background-color: var(--green-2);
     padding: 0.5em 0 2em 0;
 }
 footer .rest {
     min-height: 10em;
-    background-color: #3f69a8;
+    background-color: var(--green-2);
 }
 @media screen and (max-width: 650px) {
     .navtop div .container a .fa-cog {

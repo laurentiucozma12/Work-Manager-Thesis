@@ -17,9 +17,7 @@ include ROOT_PATH."/assets/html/head.php";
     </div>
     <div>
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary navBtn" data-bs-toggle="modal" data-bs-target="#createProject">
-        Create Project
-        </button>
+        <button type="button" class="btn btn-primary navBtn" data-bs-toggle="modal" data-bs-target="#createProject">Create Project</button>
         <form method="post">
             <button class="btn btn-primary logoutBtn navBtn" type="submit" name="logout">Logout</button>
         </form>
@@ -36,7 +34,7 @@ if (isset($_POST["logout"])) {
 <main>
 <div class="content read">	
         <!-- Modal Project -->
-        <div class="modal" id="createProject" tabindex="-1">
+        <div class="modal" id="createProject">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-body">
@@ -53,7 +51,7 @@ if (isset($_POST["logout"])) {
         </div>
 
         <!-- Update Modal Project -->
-        <div class="modal" id="updateModal" tabindex="-1">
+        <div class="modal" id="updateModal">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-body">
@@ -71,7 +69,7 @@ if (isset($_POST["logout"])) {
         </div>
 
         <!-- Here will be displayed the projects -->
-        <div id="displayDataProjects" class="displayDataProjects"></div>       
+        <div id="displayDataProjects" class="displayDataProjects d-flex"></div>       
     </div>  
 </main>
 <?php include ROOT_PATH."/assets/html/footer.php" ?>

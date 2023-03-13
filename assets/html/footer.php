@@ -9,6 +9,8 @@
 <!-- jQuery -->
 <script type="text/javascript" src="<?php echo WEB_PATH; ?>/assets/js/jQuery-v3.6.1.js"></script>
 <script type="text/javascript" src="<?php echo WEB_PATH; ?>/assets/js/jQuery-UI-v1.13.2.js"></script>
+<script type="text/javascript" src="<?php echo WEB_PATH; ?>/assets/js/Sortable
+.js"></script>
 
 <!-- Flatpickr -->
 <script type="text/javascript" src="<?php echo WEB_PATH; ?>/assets/js/flatpickr-v4.6.13.js"></script>

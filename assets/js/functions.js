@@ -45,6 +45,43 @@ class Picker {
     }
 }
 
+function updatePositions(evt) {
+    var data = {
+        updateProjectPosition: true,
+        oldIndex: evt.oldIndex,
+        newIndex: evt.newIndex,
+        projectId: evt.clone.attributes.data_id.value
+    };
+
+    $.ajax({
+        url: "/app/services/positions.php",
+        type: 'post',
+        data: data,
+        success: function(data, status) {
+            console.log('success');
+        },
+        error: function() {
+            console.log("error");
+        }
+    });
+}
+
+// Sortable
+$(document).ready(function(){
+    var projectsArea = document.getElementById('displayDataProjects');
+
+    new Sortable(projectsArea, {
+	    animation: 150,
+        onStart: function (/**Event*/evt) {
+            // console.log("Elementul este focusat pentru mutare, si are index: " + evt.oldIndex);
+        },
+        onEnd: function (/**Event*/evt) {
+            updatePositions(evt);
+            // console.log("Mutat in lista curenta, de pe index: " + evt.oldIndex + ", pe index:" + evt.newIndex);
+        }    
+    });
+});
+
 // Projects
 $(document).ready(function(){
     displayData();  
@@ -75,6 +112,7 @@ function saveProject() {
 
 function displayData() {
     let displayDataProjects = "true";
+
     $.ajax({
         url: "/app/services/display.php",
         type: 'post',
@@ -221,7 +259,6 @@ function updateTask() {
             task_date: task_date
         },
         success: function (data, status) {
-            console.log("success");
             $('#updateModalTask').modal('hide');
             displayData();
         },
