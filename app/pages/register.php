@@ -10,29 +10,29 @@ include ROOT_PATH.'/assets/html/head.php';
             <div class='row'>
                 <div class="mb-3 col-6">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" name="username" class="form-control" id="username">
+                    <input type="text" name="username" class="form-control" id="username" required="required">
                 </div>
                 <div class="mb-3 col-6">
                     <label for="firstname" class="form-label">Firstname</label>
-                    <input type="text" name="firstname" class="form-control" id="firstname">
+                    <input type="text" name="firstname" class="form-control" id="firstname" required="required">
                 </div>
                 <div class="mb-3 col-6">
                     <label for="lastname" class="form-label">Lastname</label>
-                    <input type="text" name="lastname" class="form-control" id="lastname">
+                    <input type="text" name="lastname" class="form-control" id="lastname" required="required">
                 </div>
                 <div class='mb-3 col-6'>
                     <label for='email' class='form-label'>Email address</label>
-                    <input type='email' name='email' class='form-control' id='email' aria-describedby='emailHelp'>
+                    <input type='email' name='email' class='form-control' id='email' aria-describedby='emailHelp' required="required">
                     <div id='emailHelp' class='form-text'>We'll never share your email with anyone else.</div>
                 </div>
                 <div class='mb-3 col-6'>
                     <label for='password' class='form-label'>Password</label>
-                    <input type='password' name='password' class='form-control' id='password'>
+                    <input type='password' name='password' class='form-control' id='password' required="required">
                     <div id='passwordHelpBlock' class='form-text'>Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.</div>
                 </div>
                 <div class='mb-3 col-6'>
                     <label for='repeat_password' class='form-label'>Repeat Password</label>
-                    <input type='password' name='repeat_password' class='form-control' id='repeat_password'>
+                    <input type='password' name='repeat_password' class='form-control' id='repeat_password' required="required">
                     <div id='passwordHelpBlock' class='form-text'>Passwords must be the same</div>
                 </div>
             </div>

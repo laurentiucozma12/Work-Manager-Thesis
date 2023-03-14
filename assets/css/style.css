@@ -91,11 +91,11 @@ input[type=checkbox]
     border: 0 !important;
 }
 .btn-primary {
-    background-color: var(--green-2);
+    background-color: var(--green-3);
     box-shadow: none !important;
 }
 .btn-primary:hover {
-    background-color: var(--green-3) !important;
+    background-color: var(--green-4);
     transition: .5s;
 }
 .btn-secondary, .btn-secondary:focus {

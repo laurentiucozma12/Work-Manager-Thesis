@@ -9,12 +9,12 @@ include ROOT_PATH.'/assets/html/head.php';
         <form class='mb-4' method='POST'>
             <div class='mb-3'>
                 <label for='exampleInputEmail1' class='form-label'>Email address</label>
-                <input type='email' name='email' class='form-control' id='email' aria-describedby='emailHelp'>
+                <input type='email' name='email' class='form-control' id='email' aria-describedby='emailHelp' required="required">
                 <div id='emailHelp' class='form-text'>We'll never share your email with anyone else.</div>
             </div>
             <div class='mb-3'>
                 <label for='password' class='form-label'>Password</label>
-                <input type='password' name='password' class='form-control' id='password'>
+                <input type='password' name='password' class='form-control' id='password' required="required">
                 <div id='passwordHelpBlock' class='form-text'>
                     Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
                 </div>
