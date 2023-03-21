@@ -90,7 +90,7 @@ input[type=checkbox]
     border-radius: 0 !important;
     border: 0 !important;
 }
-.btn-primary {
+.btn-primary, .btn-primary:focus {
     background-color: var(--green-3);
     box-shadow: none !important;
 }
