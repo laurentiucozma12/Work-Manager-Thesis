@@ -3,6 +3,7 @@ Work Manager is my thesis.
 **The user is able to:**
 - register and login into the site
 - add/edit/delete it's projects or tasks
+- set a due date
 - check every task after completion
 
 **Table of contents**
