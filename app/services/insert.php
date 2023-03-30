@@ -26,18 +26,5 @@ if (isset($_POST["taskNameSend"]) && !empty($_POST["taskNameSend"])) {
     $sql->bindParam(':taskName', $_POST["taskNameSend"]);
     $sql->bindParam(':taskDescription', $_POST["taskDescriptionSend"]);
     $sql->execute();
-
-    // Update task positions
-    $result = $conn->prepare("SELECT taskId FROM tasks WHERE projectId = :projectId ORDER BY taskPosition ASC");
-    $result->bindParam(':projectId', $_POST["taskProjectId"]);
-    $result->execute();
-    $tasks = $result->fetchAll(PDO::FETCH_ASSOC);
-
-    foreach ($tasks as $key => $task) {
-        $sql = $conn->prepare("UPDATE tasks SET taskPosition = :taskPosition WHERE taskId = :taskId");
-        $sql->bindParam(':taskPosition', $key + 1);
-        $sql->bindParam(':taskId', $task['taskId']);
-        $sql->execute();
-    }
 }
 ?>
