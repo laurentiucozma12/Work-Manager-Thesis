@@ -125,7 +125,7 @@ if (isset($_POST['displaySendProjects'])) {
                             <div class="form-group">
                                 <label for="taskName"><h4 class="m-0">Task name</h4></label>
                                 <input name="taskName" class="form-control mt-3 mb-3" id="taskName'.$id.'" placeholder="Enter task name" />
-                                <label for="taskDescription"><h4 class="m-0">Task name</h4></label>
+                                <label for="taskDescription"><h4 class="m-0">Task description</h4></label>
                                 <textarea name="taskDescription" class="form-control mt-3 mb-3" id="taskDescription'.$id.'" placeholder="Enter task description"></textarea>
                             </div>
                             
