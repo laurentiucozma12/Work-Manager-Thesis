@@ -1,10 +1,15 @@
 # Work Manager
-Work Manager is my thesis.      
-**The user is able to:**
-- register and login into the site
-- add/edit/delete it's projects or tasks
-- set a due date
-- check every task after completion
+Work Manager (My Thesis) is a Management WebSite based on Kanban Methodology.
+**Status:**
+- [x] Complete
+**Progress:**
+- [x] Login and Register System
+- [x] Only logged-in users cand see their projects page
+- [x] CRUD operations for projects (create/read/update/delete)
+- [x] CRUD operations for tasks (create/read/update/delete)
+- [x] Set a due date for every task (Calendar implemented with Pickr lib)
+- [x] Check button for every task
+- [x] Drag & Drop projects/cards implemented, using jQuery UI.
 
 **Table of contents**
 - [Login and Register System](#login-and-register-system)
@@ -25,11 +30,10 @@ Work Manager is my thesis.
 ![database_users](https://github.com/laurentiucozma12/Work-Manager-Thesis/blob/master/projectPreview/database_users.png)   
 ## Projects  
 ![database_projects](https://github.com/laurentiucozma12/Work-Manager-Thesis/blob/master/projectPreview/database_projects.png)     
-# Tasks 
+## Tasks 
 ![database_tasks](https://github.com/laurentiucozma12/Work-Manager-Thesis/blob/master/projectPreview/database_tasks.png)      
     
 # Documentation
-
 - [Colors](https://www.canva.com/learn/100-color-combinations/#100-color-palettes)
 - [Color Theory](https://thenextweb.com/news/how-to-create-the-right-emotions-with-color-in-web-design)
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
