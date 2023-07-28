@@ -1,8 +1,8 @@
 # Work Manager
-Work Manager (My Thesis) is a Management WebSite based on Kanban Methodology.
-**Status:**
-- [x] Complete
-**Progress:**
+Work Manager (My Thesis) is a Management WebSite based on Kanban Methodology.    
+**Status:**    
+- [x] Complete     
+**Progress:**     
 - [x] Login and Register System
 - [x] Only logged-in users cand see their projects page
 - [x] CRUD operations for projects (create/read/update/delete)
